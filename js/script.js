@@ -21,7 +21,7 @@ $(document).ready(function () {
               <small class="text-muted">${data[i].email}</small>
             </p>
             <div class="buttons" onclick="getUserPosts('${data[i].id}', '${data[i].name}')">
-                <a href="#" type="button" class="btn btn-outline-primary">Get User’s Posts</a>
+                <a type="button" class="btn btn-outline-primary">Get User’s Posts</a>
             </div>
           </div>
         </div>
