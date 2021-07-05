@@ -31,12 +31,11 @@ $(document).ready(function () {
       $("#user-list").html(users_list);
     },
     error: function (e) {
-      console.error("error", e);
+      return e;
     },
   });
 });
 function getUserPosts(id, name) {
-  console.log("here", id, name);
   $.ajax({
     url: api + "/" + id + "/posts",
     method: "GET",
@@ -46,14 +45,13 @@ function getUserPosts(id, name) {
       window.location.href = "posts.html";
     },
     error: function (e) {
-      console.error("error", e);
+      return e
     },
   });
 }
 function loadUserPosts() {
   var user = localStorage.getItem("user");
   var posts = JSON.parse(localStorage.getItem("posts"));
-  console.log(posts);
   document.querySelector('.username').innerHTML = user;
   var postArray = "";
   for (var i = 0; i < posts.length; i++) {
